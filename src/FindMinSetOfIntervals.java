@@ -5,9 +5,6 @@ import java.util.List;
 
 /**
  * given list of intervals, find the minimum set that covers all intervals
- * <p>
- * Copyright © 2019, Oracle and/or its affiliates. All rights reserved.
- *
  * @author tsu
  * @since 2019-06-21
  */

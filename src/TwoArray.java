@@ -4,9 +4,6 @@ import java.util.Map;
 
 /**
  * Given two array and a target, find one element from each array that will sum to closest to target
- * <p>
- * Copyright © 2019, Oracle and/or its affiliates. All rights reserved.
- *
  * @author tsu
  * @since 2019-06-20
  */

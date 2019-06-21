@@ -3,10 +3,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO: Enter a paragraph that summarizes what the class does and why someone might want to utilize it
- * <p>
- * Copyright © 2019, Oracle and/or its affiliates. All rights reserved.
- *
  * @author tsu
  * @since 2019-05-13
  */
