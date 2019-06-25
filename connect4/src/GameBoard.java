@@ -22,8 +22,16 @@ public class GameBoard {
         }
     }
 
-    public void put(int userChoice, String userType) {
+    private boolean isCellEmpty(String value) {
+        return value.equals("|");
+    }
 
+    public void put(int col, String userType) {
+        for (int r = board.length - 1; r >= 0; r--) {
+            if (isCellEmpty(board[r][col])) {
+                board[r][col] = userType;
+            }
+        }
     }
 
     private void checkWin() {
