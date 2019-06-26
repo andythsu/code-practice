@@ -8,10 +8,14 @@
 public class GameBoard {
     String[][] board;
     String winner = "";
+    int row;
+    int col;
     final String EMPTY_STR = "|";
 
     public GameBoard(int row, int col) {
         board = new String[row][col];
+        this.row = row;
+        this.col = col;
         initBoard();
     }
 
@@ -32,16 +36,33 @@ public class GameBoard {
     }
 
     public void put(int col, String userType) {
-        for (int r = board.length - 1; r >= 0; r--) {
+        int r;
+        for (r = board.length - 1; r >= 0; r--) {
             if (isCellEmpty(board[r][col])) {
                 board[r][col] = userType;
                 break;
             }
         }
+        // check winner
+        int horizontalSum = checkWin(r, col, 1, 0, userType) + checkWin(r, col, -1, 0, userType);
+        int verticalSum = checkWin(r, col, 0, 1, userType) + checkWin(r, col, 0, -1, userType);
+        int leftTopRightBotSum = checkWin(r, col, -1, -1, userType) + checkWin(r, col, 1, 1, userType);
+        int rightTopLeftBotSum = checkWin(r, col, 1, -1, userType) + checkWin(r, col, -1, 1, userType);
+        if(horizontalSum > 4 || verticalSum > 4 || leftTopRightBotSum > 4 || rightTopLeftBotSum > 4){
+            this.winner = userType;
+        }
     }
 
-    private void checkWin() {
-
+    private int checkWin(int currentX, int currentY, int dirX, int dirY, String userType) {
+        int count = 0;
+        while(currentX >= 0 && currentX < col && currentY >= 0 && currentY < row ){
+            if(board[currentX][currentY].equals(userType)){
+                count++;
+            }
+            currentX += dirX;
+            currentY += dirY;
+        }
+        return count;
     }
 
     public boolean hasWinner() {
@@ -50,5 +71,29 @@ public class GameBoard {
 
     public String getWinner() {
         return winner;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(" ");
+        sb.append(" ");
+        for(int c=0; c<col; c++){
+            sb.append(c);
+            sb.append(" ");
+        }
+
+        sb.append("\n");
+
+        for(int r=0; r<board.length; r++){
+            sb.append(r);
+            sb.append(" ");
+            for(int c=0; c<board[r].length; c++){
+                sb.append(board[r][c]);
+                sb.append(" ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

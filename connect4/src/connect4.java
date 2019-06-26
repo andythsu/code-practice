@@ -14,11 +14,16 @@ public class connect4 {
         int row = input.nextInt();
         System.out.println("col: ");
         int col = input.nextInt();
-        int userContinue;
         GameBoard gameBoard = new GameBoard(row, col);
-        int round = 0;
+
         String userType;
-        do {
+        int userContinue = 0;
+        int round = 0;
+
+        System.out.println("current board: ");
+        System.out.println(gameBoard.toString());
+
+        while(userContinue != -1 && !gameBoard.hasWinner()){
             userType = round % 2 == 0 ? "X" : "O";
             System.out.println("press which column to drop "+ userType +" (0-" + (col - 1) + "), -1 to stop game");
             userContinue = input.nextInt();
@@ -26,11 +31,12 @@ public class connect4 {
                 gameBoard.put(userContinue, userType);
             }else{
                 System.out.println("you cannot add to this column");
-                System.out.println("press which column to drop "+ userType +" (0-" + (col - 1) + "), -1 to stop game");
                 round--;
             }
             round++;
-        } while (userContinue != -1 || gameBoard.hasWinner());
+            System.out.println("current board: ");
+            System.out.println(gameBoard.toString());
+        }
         System.out.println("winner is " + gameBoard.getWinner());
     }
 }
