@@ -19,14 +19,16 @@ public class connect4 {
         int round = 0;
         String userType;
         do {
-            if(round % 2 == 0){
-                userType = "X";
-            }else{
-                userType = "O";
-            }
-            System.out.println("press which column to drop "+ (round % 2 == 0 ? "X" : "O") +" (0-" + (col - 1) + "), -1 to stop game");
+            userType = round % 2 == 0 ? "X" : "O";
+            System.out.println("press which column to drop "+ userType +" (0-" + (col - 1) + "), -1 to stop game");
             userContinue = input.nextInt();
-            gameBoard.put(userContinue, userType);
+            if(gameBoard.canAdd(userContinue)){
+                gameBoard.put(userContinue, userType);
+            }else{
+                System.out.println("you cannot add to this column");
+                System.out.println("press which column to drop "+ userType +" (0-" + (col - 1) + "), -1 to stop game");
+                round--;
+            }
             round++;
         } while (userContinue != -1 || gameBoard.hasWinner());
         System.out.println("winner is " + gameBoard.getWinner());

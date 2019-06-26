@@ -18,8 +18,13 @@ public class GameBoard {
         for (int r = 0; r < board.length; r++) {
             for (int c = 0; c < board[r].length; c++) {
                 board[r][c] = "|";
+                break;
             }
         }
+    }
+
+    public boolean canAdd(int column){
+        return isCellEmpty(board[0][column]);
     }
 
     private boolean isCellEmpty(String value) {
