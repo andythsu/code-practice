@@ -8,14 +8,14 @@
 public class GameBoard {
     String[][] board;
     String winner = "";
-    int row;
-    int col;
+    int MAX_ROW;
+    int MAX_COL;
     final String EMPTY_STR = "|";
 
-    public GameBoard(int row, int col) {
-        board = new String[row][col];
-        this.row = row;
-        this.col = col;
+    public GameBoard(int row, int MAX_COL) {
+        board = new String[row][MAX_COL];
+        this.MAX_ROW = row;
+        this.MAX_COL = MAX_COL;
         initBoard();
     }
 
@@ -28,7 +28,7 @@ public class GameBoard {
     }
 
     public boolean canAdd(int column){
-        return isCellEmpty(board[0][column]);
+        return column < MAX_COL && isCellEmpty(board[0][column]);
     }
 
     private boolean isCellEmpty(String value) {
@@ -55,7 +55,7 @@ public class GameBoard {
 
     private int checkWin(int currentX, int currentY, int dirX, int dirY, String userType) {
         int count = 0;
-        while(currentX >= 0 && currentX < col && currentY >= 0 && currentY < row ){
+        while(currentX >= 0 && currentX < MAX_COL && currentY >= 0 && currentY < MAX_ROW){
             if(board[currentX][currentY].equals(userType)){
                 count++;
             }
@@ -78,7 +78,7 @@ public class GameBoard {
         StringBuilder sb = new StringBuilder();
         sb.append(" ");
         sb.append(" ");
-        for(int c=0; c<col; c++){
+        for(int c = 0; c< MAX_COL; c++){
             sb.append(c);
             sb.append(" ");
         }
