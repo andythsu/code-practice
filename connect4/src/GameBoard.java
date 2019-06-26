@@ -12,10 +12,10 @@ public class GameBoard {
     int MAX_COL;
     final String EMPTY_STR = "|";
 
-    public GameBoard(int row, int MAX_COL) {
-        board = new String[row][MAX_COL];
+    public GameBoard(int row, int col) {
+        this.board = new String[row][col];
         this.MAX_ROW = row;
-        this.MAX_COL = MAX_COL;
+        this.MAX_COL = col;
         initBoard();
     }
 
