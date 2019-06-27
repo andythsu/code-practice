@@ -22,33 +22,33 @@ class CoinChange {
         }
     }
 
-    public static void main(String[] args) {
-        int target = 16;
-        System.out.println("target: " + target);
-
-        ArrayList<Coin> coins = new ArrayList<>(getArrayList());
-        // sort descending
-        coins.sort((Coin o1, Coin o2) -> o2.value - o1.value);
-        ArrayList<Coin> greedyResult = new ArrayList<>();
-        boolean isGreedyPossible = greedy(new ArrayList<>(coins), target, greedyResult);
-        System.out.println("is greedy possible: " + isGreedyPossible);
-        if (isGreedyPossible) System.out.println("greedy result: " + Arrays.toString(greedyResult.toArray()));
-
-        ArrayList<Coin> coins2 = new ArrayList<>(getArrayList());
-        // sort ascending
-        coins2.sort((Coin o1, Coin o2) -> o1.value - o2.value);
-        List<List<Coin>> backtrackResult = new ArrayList<>();
-        backtrack(coins2, target, backtrackResult, new ArrayList<>());
-        boolean isBackTrackPossible = backtrackResult.size() > 0;
-        System.out.println("is backtrack possible: " + isBackTrackPossible);
-        if (isBackTrackPossible) System.out.println("backtrack result: " + Arrays.toString(backtrackResult.toArray()));
-
-
-        ArrayList<Coin> coins3 = new ArrayList<>(getArrayList());
-        // sort ascending
-        coins3.sort((Coin o1, Coin o2) -> o1.value - o2.value);
-        System.out.println("number of ways by dp: " + dp(coins3, target));
-    }
+//    public static void main(String[] args) {
+//        int target = 16;
+//        System.out.println("target: " + target);
+//
+//        ArrayList<Coin> coins = new ArrayList<>(getArrayList());
+//        // sort descending
+//        coins.sort((Coin o1, Coin o2) -> o2.value - o1.value);
+//        ArrayList<Coin> greedyResult = new ArrayList<>();
+//        boolean isGreedyPossible = greedy(new ArrayList<>(coins), target, greedyResult);
+//        System.out.println("is greedy possible: " + isGreedyPossible);
+//        if (isGreedyPossible) System.out.println("greedy result: " + Arrays.toString(greedyResult.toArray()));
+//
+//        ArrayList<Coin> coins2 = new ArrayList<>(getArrayList());
+//        // sort ascending
+//        coins2.sort((Coin o1, Coin o2) -> o1.value - o2.value);
+//        List<List<Coin>> backtrackResult = new ArrayList<>();
+//        backtrack(coins2, target, backtrackResult, new ArrayList<>());
+//        boolean isBackTrackPossible = backtrackResult.size() > 0;
+//        System.out.println("is backtrack possible: " + isBackTrackPossible);
+//        if (isBackTrackPossible) System.out.println("backtrack result: " + Arrays.toString(backtrackResult.toArray()));
+//
+//
+//        ArrayList<Coin> coins3 = new ArrayList<>(getArrayList());
+//        // sort ascending
+//        coins3.sort((Coin o1, Coin o2) -> o1.value - o2.value);
+//        System.out.println("number of ways by dp: " + dp(coins3, target));
+//    }
 
     public static int dp(List<Coin> coins, int target) {
         int[] table = new int[target + 1];
