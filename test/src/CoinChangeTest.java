@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 
 import java.util.ArrayList;
@@ -18,7 +15,7 @@ public class CoinChangeTest {
     private int target;
     private CoinChange coinChange;
 
-    @BeforeEach
+    @BeforeAll
     public void setup(){
         coins = new ArrayList<CoinChange.Coin>() {{
             add(new CoinChange.Coin(1, 0));
