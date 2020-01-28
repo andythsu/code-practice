@@ -4,12 +4,12 @@ import org.junit.jupiter.api.*;
  * @author tsu
  * @since 2019-07-03
  */
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
 public class MinGasStationTest {
 
     private MinGasStation minGasStation;
 
-    @BeforeAll
+    @BeforeEach
     public void setUp(){
         minGasStation = new MinGasStation();
     }

@@ -15,7 +15,7 @@ public class CoinChangeTest {
     private int target;
     private CoinChange coinChange;
 
-    @BeforeAll
+    @BeforeEach
     public void setup(){
         coins = new ArrayList<CoinChange.Coin>() {{
             add(new CoinChange.Coin(1, 0));
