@@ -23,9 +23,7 @@ public class CoinChangeTest {
             add(new CoinChange.Coin(5, 1));
             add(new CoinChange.Coin(10, 10));
         }};
-
         target = 16;
-
         coinChange = new CoinChange();
     }
     @Test
