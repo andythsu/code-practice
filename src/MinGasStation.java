@@ -2,7 +2,6 @@ import java.util.Arrays;
 
 /**
  * Find minimum trips gas stations that will get to last gas station
- *
  * @author tsu
  * @since 2019-07-02
  */
