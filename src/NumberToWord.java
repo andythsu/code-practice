@@ -1,5 +1,5 @@
 /**
- * @Author Andy
+ * @Author asu
  * @Date 2/19/2020
  * @Description Format number to word. Number is expected to be from 0 - 999
  **/
