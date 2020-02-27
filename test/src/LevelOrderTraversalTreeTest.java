@@ -6,16 +6,16 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 public class LevelOrderTraversalTreeTest {
-    Node node_1, node_2, node_3, node_4, node_5;
+    LevelOrderTraversalTree.Node node_1, node_2, node_3, node_4, node_5;
     LevelOrderTraversalTree levelOrderTraversalTree;
 
     @BeforeEach
     public void setup() {
-        node_1 = new Node(1);
-        node_2 = new Node(2);
-        node_3 = new Node(3);
-        node_4 = new Node(4);
-        node_5 = new Node(5);
+        node_1 = new LevelOrderTraversalTree.Node(1);
+        node_2 = new LevelOrderTraversalTree.Node(2);
+        node_3 = new LevelOrderTraversalTree.Node(3);
+        node_4 = new LevelOrderTraversalTree.Node(4);
+        node_5 = new LevelOrderTraversalTree.Node(5);
         levelOrderTraversalTree = new LevelOrderTraversalTree();
     }
 

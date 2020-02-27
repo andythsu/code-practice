@@ -2,6 +2,8 @@
  * @Author asu
  * @Date 2/19/2020
  * @Description Format number to word. Number is expected to be from 0 - 999
+ * <p>
+ * THIS IS NOT DONE YET
  **/
 public class NumberToWord {
     private String[] singleDigit = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
