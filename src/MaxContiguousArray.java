@@ -17,10 +17,8 @@ public class MaxContiguousArray {
         while (j >= 0) {
             int start = 0;
             for (int end = j; end < a.length; end++) {
-                int[] newArray = formArray(a, start, end);
-                if (checkElements(newArray, b_set, c_set)) {
-                    return newArray;
-                }
+                int[] newArray = formArray(a, start, end, b_set, c_set);
+                if (newArray != null) return newArray;
                 start++;
             }
             j--;
@@ -28,23 +26,14 @@ public class MaxContiguousArray {
         return new int[0];
     }
 
-    private int[] formArray(int[] a, int start, int end) {
+    private int[] formArray(int[] a, int start, int end, Set b, Set c) {
         int[] newArray = new int[end - start + 1];
         for (int i = start, newArrayIndex = 0; i <= end; i++, newArrayIndex++) {
+            if (!b.contains(a[i]) || c.contains(a[i])) {
+                return null;
+            }
             newArray[newArrayIndex] = a[i];
         }
         return newArray;
-    }
-
-    private boolean checkElements(int[] newArray, Set b, Set c) {
-        for (int elem : newArray) {
-            if (!b.contains(elem)) {
-                return false;
-            }
-            if (c.contains(elem)) {
-                return false;
-            }
-        }
-        return true;
     }
 }

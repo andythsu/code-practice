@@ -26,4 +26,15 @@ public class MaxContiguousArrayTest {
         int[] actual = maxContiguousArray.findMaxContiguousArray(a, b, c);
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("test 2")
+    public void test2() {
+        int[] a = {1, 2, 3};
+        int[] b = {2, 3};
+        int[] c = {};
+        int[] expected = {2, 3};
+        int[] actual = maxContiguousArray.findMaxContiguousArray(a, b, c);
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
