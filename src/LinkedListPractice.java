@@ -49,7 +49,7 @@ public class LinkedListPractice {
         prev.next = found.next;
 
         // putting found in the first of firstList
-        prependToFirstList(found);
+        firstList = prependToList(firstList, found);
 
         // the head of original firstList will now be in the second position
         Node secondFirst = firstList.next;
@@ -58,22 +58,19 @@ public class LinkedListPractice {
         firstList.next = firstList.next.next;
 
         // put it at the head of second list
-        prependToSecondList(secondFirst);
-    }
-
-    private static void prependToSecondList(Node n) {
-        Node temp = secondList;
-        n.next = temp;
-        secondList = n;
+        secondList = prependToList(secondList, secondFirst);
     }
 
     /**
-     * @param n the node to prepend to list
+     * @param list the list to prepend to
+     * @param n    the node
+     * @return
      */
-    private static void prependToFirstList(Node n) {
-        Node temp = firstList;
+    private static Node prependToList(Node list, Node n) {
+        Node temp = list;
         n.next = temp;
-        firstList = n;
+        list = n;
+        return list;
     }
 
     private static String iterate(Node list) {
