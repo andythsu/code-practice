@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AmazonOA/AmazonOA.iml" filepath="$PROJECT_DIR$/AmazonOA/AmazonOA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AmazonOA/AmazonOATest/AmazonOATest.iml" filepath="$PROJECT_DIR$/AmazonOA/AmazonOATest/AmazonOATest.iml" />
       <module fileurl="file://$PROJECT_DIR$/RandomStuff/RandomStuff.iml" filepath="$PROJECT_DIR$/RandomStuff/RandomStuff.iml" />
       <module fileurl="file://$PROJECT_DIR$/connect4/connect4.iml" filepath="$PROJECT_DIR$/connect4/connect4.iml" />
       <module fileurl="file://$PROJECT_DIR$/java practice.iml" filepath="$PROJECT_DIR$/java practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AmazonOA/testttt.iml" filepath="$PROJECT_DIR$/AmazonOA/testttt.iml" />
     </modules>
   </component>
 </project>
