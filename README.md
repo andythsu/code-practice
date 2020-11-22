@@ -1,4 +1,4 @@
-- BuyAndSellStock.java
+- BuyAndSellStock
 - CoinChange
 - DecryptWord
 - FindMinSetOfIntervals
@@ -7,7 +7,7 @@
 - LinkedListPractice
 - MaxContiguousArray
 - MinGasStation
-- MoviesOnPlane
+- [MoviesOnPlane](https://leetcode.com/discuss/interview-question/313719/Amazon-or-Online-Assessment-2019-or-Movies-on-Flight)
 - NumberToWord
 - SudokuSolver
 - TwoArray

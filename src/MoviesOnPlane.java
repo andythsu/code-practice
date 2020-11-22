@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @Author asu
  * @Date 11/2/2020
- * @Description
+ * @Description https://leetcode.com/discuss/interview-question/313719/Amazon-or-Online-Assessment-2019-or-Movies-on-Flight
  **/
 public class MoviesOnPlane {
     public int[] solution(int[] durations, int flight) {
